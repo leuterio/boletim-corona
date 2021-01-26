@@ -1,0 +1,171 @@
+body {
+    .mdc-layout-grid__inner {
+        margin-top: 25px;
+    }
+    .container {
+        max-width: 1000px;
+    }
+    header.main {
+        margin-bottom: -15px;
+        position: relative;
+        .text {
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            left: 65px;
+            font-family: 'amelia-basic-blackitalic-3', sans-serif;
+            font-style: italic;
+            h1 {
+                font-size: 28px;
+            }
+            .info {
+                margin-top: -15px;
+                font-size: 14px;
+            }
+        }
+    }
+    main {
+        font-family: 'amelia-basic-bold-5', sans-serif;
+        font-style: italic;
+        border: 1px solid #dedede;
+        .box {
+            width: 201px;
+            height: 154px;
+            border: 1.5px solid #dedede;
+
+            &.notificados {
+                header {
+                    background: #fdce03;
+                }
+            }
+            &.descartados {
+                header {
+                    background: #0100fe;
+                }
+            }
+            &.suspeito-monitor {
+                header {
+                    background: #fa6600;
+                    text-align: center;
+                }
+            }
+            &.suspeito-melhora {
+                header {
+                    background: #fa6766;
+                    flex-direction: column;
+                }
+            }
+            &.confirmados {
+                header {
+                    background: #f90f00;
+                    color: #fdcb17;
+                }
+            }
+            &.hospitalizados {
+                header {
+                    background: #aa02c9;
+                }
+            }
+            &.curados {
+                header {
+                    background: #289a23;
+                }
+            }
+            &.obitos {
+                header {
+                    background: #000000;
+                }
+            }
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 20%;
+                font-weight: bold;
+                padding: 10px;
+                color: #fff;
+            }
+            .number {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 70%;
+                font-size: 46px;
+                font-weight: bold;
+            }
+        }
+        .numeros {
+            border-top: 1px solid #dedede;
+            padding-top: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            .cidade {
+                font-family: 'amelia-basic-bolditalic-7', sans-serif;
+                line-height: 20px;
+                .confirmados {
+                    color: #f90f00;
+                }
+                .curados {
+                    color: #289b1e;
+                }
+                .obitos {
+                    color: #000;
+                }
+            }
+        }
+        .infor {
+            font-size: 14px;
+        }
+        .legenda {
+            border-top: 1px solid #dedede;
+            padding-top: 10px;
+            .mapa {
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                font-size: 14px;
+                & > div {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 10px;
+                    &:last-child {
+                        margin-right: 0px;
+                    }
+                }
+                .sqr {
+                    width: 19px;
+                    height: 16px;
+                    margin-right: 5px;
+                }
+                .confirmados {
+                    color: #f90f00;
+                    .sqr {
+                        background: #f90f00;
+                    }
+                }
+                .curados {
+                    color: #289b1e;
+                    .sqr {
+                        background: #289b1e;
+                    }
+                }
+                .obitos {
+                    color: #000;
+                    .sqr {
+                        background: #000;
+                    }
+                }
+            }
+            .info {
+                font-size: 12px;
+            }
+        }
+    }
+    footer, header.main {
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            width: 100%;
+        }
+    }
+}
