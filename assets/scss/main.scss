@@ -1,4 +1,19 @@
 body {
+    .form {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+        margin-bottom: 25px;
+        label {
+            font-family: -webkit-pictograph;
+            font-size: 14px;
+        }
+    }
+    #boletim {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1000px;
+    }
     .mdc-layout-grid__inner {
         margin-top: 25px;
     }
