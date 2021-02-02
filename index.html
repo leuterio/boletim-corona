@@ -19,25 +19,33 @@
 </head>
 
 <body>
-    <form class="form">
-        <fieldset>
-            <label for="csvFileInput"> <strong>Arquivo CSV:</strong>
-            </label>
-            <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+    <div class="panel">
+        <div class="add-info">
+            <div class="num-time">
+                <label>NÚMERO</label>
+                <input class="info-input" id="number-input" type="number">
             </div>
-        </fieldset>
-    </form>
-    <div id="output">
-
+            <div class="num-time">
+                <label>HORÁRIO</label>
+                <input class="info-input" id="time-input" type="time">
+            </div>
+        </div>
+        <form class="form">
+            <fieldset>
+                <label for="csvFileInput"> <strong>ARQUIVO CSV:</strong>
+                </label>
+                <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+                </div>
+            </fieldset>
+        </form>
     </div>
-
     <div id="boletim">
         <header class="main container">
             <img src="assets/img/header-top-img.png" />
             <div class="text">
-                <h1>BOLETIM INFORMATIVO <span>N° 303</span></h1>
+                <h1>BOLETIM INFORMATIVO N° <span id="number"></span></h1>
                 <div class="info">
-                    <p>DATA: <span id="date"></span> - HORA: 17:00 - Marechal Floriano - ES</p>
+                    <p>DATA: <span id="date"></span> - HORA: <span id="time"></span> - Marechal Floriano - ES</p>
                 </div>
             </div>
         </header>
@@ -122,7 +130,7 @@
                     <div id="15" class="bairro quinze">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
                     <div id="16" class="bairro dezesseis">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
                     <div id="17" class="bairro dezessete">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
-                    <div id="18" class="bairro dezoito": <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
+                    <div id="18" class="bairro dezoito">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
                     <div id="19" class="bairro dezenove">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
                     <div id="20" class="bairro vinte">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
                     <div id="21" class="bairro vinteeum">: <span class="confirmados"></span> / <span class="curados"></span> / <span class="obitos"></span></div>
@@ -211,6 +219,8 @@
         function createBoletim(lines) {
 
             var date = lines[1][2];
+            var number = $('#number-input').val();
+            var time =  $('#time-input').val();
 
             function dataAtualFormatada(){
                 var data = new Date(),
@@ -223,6 +233,9 @@
             }
 
             $('#date').text(dataAtualFormatada());
+
+            $('#number').text(number);
+            $('#time').text(time);
 
             $('#notificados').text(lines[3][2].slice(1, -1));
             $('#descartados').text(lines[4][2].slice(1, -1));
@@ -415,7 +428,6 @@
             $('#32 .curados').text(lines[45][3].slice(1, -1));
             $('#32 .obitos').text(lines[45][4].slice(1, -1));
         }
-        
 
     </script>
 </body>
